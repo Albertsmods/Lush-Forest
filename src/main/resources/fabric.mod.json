@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "lushforest",
+  "version": "1.2.0",
+
+  "name": "Lush Forests",
+  "description": "The Lush forest Mod adds a new Biome with a few variants,the Lush Forest. This Biome is the above ground variant of the Lush Caves.",
+  "authors": [
+    "Albertsmods"
+  ],
+  "contact": {
+    "issues": "https://github.com/Albertsmods/Lush-Forest/issues",
+    "sources": "https://github.com/Albertsmods/Lush-Forest",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/lush-forests"
+  },
+
+  "license": "GPL-3.0",
+  "icon": "assets/lushforest/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.albertsmods.lushforest.LushForest"
+    ],
+    "terrablender": [
+      "com.albertsmods.lushforest.LushForest"
+    ]
+  },
+  "mixins": [],
+
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
