@@ -2,7 +2,6 @@ package com.albertsmods.lushforest.world.feature;
 
 import com.albertsmods.lushforest.LushForest;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
@@ -16,10 +15,6 @@ public class ModConfiguredFeatures {
     public static final Holder<ConfiguredFeature<BlockStateConfiguration, ?>> CALCITE_BOULDER = createConfiguredFeature("calcite_boulder", Feature.FOREST_ROCK, new BlockStateConfiguration(Blocks.CALCITE.defaultBlockState()));
 
     public static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> createConfiguredFeature(String id, F feature, FC config) {
-        ResourceLocation LfID = new ResourceLocation(LushForest.MOD_ID, id);
-        if (BuiltinRegistries.CONFIGURED_FEATURE.keySet().contains(LfID)) {
-            throw new IllegalStateException("Configured Feature ID: \"" + LfID.toString() + "\" already exists in the Configured Features registry!");
-        }
         return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(LushForest.MOD_ID, id).toString(), new ConfiguredFeature<>(feature, config));
     }
 }

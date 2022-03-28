@@ -17,11 +17,7 @@ public class ModPlacedFeatures {
 
 
     public static <FC extends FeatureConfiguration> Holder<PlacedFeature> createPlacedFeature(String id, Holder<ConfiguredFeature<FC, ?>> feature, List<PlacementModifier> placementModifiers) {
-        ResourceLocation LfID = new ResourceLocation(LushForest.MOD_ID, id);
-        if (BuiltinRegistries.PLACED_FEATURE.keySet().contains(LfID))
-            throw new IllegalStateException("Placed Feature ID: \"" + LfID.toString() + "\" already exists in the Placed Features registry!");
-
-        return BuiltinRegistries.register(BuiltinRegistries.PLACED_FEATURE, LfID, new PlacedFeature(Holder.hackyErase(feature), List.copyOf(placementModifiers)));
+                return BuiltinRegistries.register(BuiltinRegistries.PLACED_FEATURE, new ResourceLocation(LushForest.MOD_ID), new PlacedFeature(Holder.hackyErase(feature), List.copyOf(placementModifiers)));
     }
 
     public static <FC extends FeatureConfiguration> Holder<PlacedFeature> createPlacedFeature(String id, Holder<ConfiguredFeature<FC, ?>> feature, PlacementModifier... placementModifiers) {
