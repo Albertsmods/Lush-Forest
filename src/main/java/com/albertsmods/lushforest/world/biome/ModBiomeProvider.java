@@ -1,5 +1,6 @@
 package com.albertsmods.lushforest.world.biome;
 
+import com.albertsmods.lushforest.LushForest;
 import com.albertsmods.lushforest.config.ConfigManager;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
@@ -25,18 +26,30 @@ public class ModBiomeProvider extends Region {
     {
         if (ConfigManager.getConfig().lushValleyEnabled) {
             this.addBiomeSimilar(mapper, Biomes.SAVANNA_PLATEAU, ModBiomeInit.LUSH_VALLEY);
+            if (ConfigManager.getConfig().debugMessages) {
+                LushForest.LOGGER.debug("Lush Valleys are enabled.");
+            }
         }
 
         if (ConfigManager.getConfig().lushForestEnabled) {
             this.addBiomeSimilar(mapper, Biomes.SPARSE_JUNGLE, ModBiomeInit.LUSH_FOREST);
+            if (ConfigManager.getConfig().debugMessages) {
+                LushForest.LOGGER.debug("Lush forests are enabled.");
+            }
         }
 
         if (ConfigManager.getConfig().lushBirchForestEnabled) {
             this.addBiomeSimilar(mapper, Biomes.OLD_GROWTH_BIRCH_FOREST, ModBiomeInit.LUSH_BIRCH_FOREST);
+            if (ConfigManager.getConfig().debugMessages) {
+                LushForest.LOGGER.debug("Lush birch forests are enabled.");
+            }
         }
 
         if (ConfigManager.getConfig().lushJungleEnabled) {
             this.addBiomeSimilar(mapper, Biomes.JUNGLE, ModBiomeInit.LUSH_JUNGLE);
+            if (ConfigManager.getConfig().debugMessages) {
+                LushForest.LOGGER.debug("Lush jungles are enabled.");
+            }
         }
     }
 }

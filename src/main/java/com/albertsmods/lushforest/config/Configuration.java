@@ -14,4 +14,5 @@ public class Configuration implements ConfigData {
     public boolean lushForestEnabled = true;
     public boolean lushJungleEnabled = true;
     public boolean lushBirchForestEnabled = true;
+    public boolean debugMessages = false;
 }

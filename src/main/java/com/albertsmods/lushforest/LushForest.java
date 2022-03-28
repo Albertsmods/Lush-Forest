@@ -30,6 +30,12 @@ public class LushForest implements ModInitializer, TerraBlenderApi {
 		} catch (ConfigData.ValidationException e) {
 			e.printStackTrace();
 		}
+
+		if (ConfigManager.getConfig().debugMessages = true) {
+			LOGGER.debug("Lush Forest biomes registered.");
+			LOGGER.debug("Lush Forest config registered.");
+			LOGGER.debug("Lush Forest auto-config registered.");
+		}
 	}
 
 	@Override
@@ -37,6 +43,9 @@ public class LushForest implements ModInitializer, TerraBlenderApi {
 	{
 		if (ConfigManager.getConfig().biomeWeight != 0) {
 			Regions.register(new ModBiomeProvider(new ResourceLocation(MOD_ID, "lushforest_biome_provider"), RegionType.OVERWORLD, ConfigManager.getConfig().biomeWeight));
+			if (ConfigManager.getConfig().debugMessages = true) {
+				LOGGER.debug("Lush Forest biome provider registered.");
+			}
 		}
 		else {
 			LOGGER.info("Lush Forest Biomes are disabled in the config! Please change 0 to something bigger to re-enable them.");

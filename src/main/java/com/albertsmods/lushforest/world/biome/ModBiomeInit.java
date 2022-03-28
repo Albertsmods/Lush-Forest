@@ -13,8 +13,6 @@ public class ModBiomeInit {
     public static final ResourceKey<Biome> LUSH_BIRCH_FOREST = register("lush_birch_forest");
     public static final ResourceKey<Biome> LUSH_JUNGLE = register("lush_jungle");
 
-    public static final ResourceKey<Biome> SURFACE_WORKER = register("do_not_gen");
-
     private static ResourceKey<Biome> register(String name)
     {
         return ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(LushForest.MOD_ID, name));
