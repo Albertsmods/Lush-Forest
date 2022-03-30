@@ -9,6 +9,6 @@
   "text.autoconfig.lushforest.option.lushValleyEnabled": "Lush Valley Generates",
   "text.autoconfig.lushforest.option.lushForestEnabled": "Lush Forest Generates",
   "text.autoconfig.lushforest.option.lushJungleEnabled": "Lush Jungle Generates",
-  "text.autoconfig.lushforest.option.lushBirchForestEnabled": "Lush Birch Forest Generates"
+  "text.autoconfig.lushforest.option.lushBirchForestEnabled": "Lush Birch Forest Generates",
   "text.autoconfig.lushforest.option.debugMessages": "Debug Messages"
 }

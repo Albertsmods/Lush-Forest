@@ -19,11 +19,6 @@ public class ModOverworldBiomes {
         return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
     }
 
-    private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
-    {
-        return biome(precipitation, category, temperature, downfall, 4159204, 329011, spawnBuilder, biomeBuilder, music);
-    }
-
     private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
     {
         return (new Biome.BiomeBuilder()).precipitation(precipitation).biomeCategory(category).temperature(temperature).downfall(downfall).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(calculateSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
@@ -65,8 +60,8 @@ public class ModOverworldBiomes {
 
         BiomeGenerationSettings.Builder biomeFeatures = new BiomeGenerationSettings.Builder();
         globalOverworldGeneration(biomeFeatures);
-        BiomeDefaultFeatures.addLushCavesVegetationFeatures(biomeFeatures);
         BiomeDefaultFeatures.addSparseJungleTrees(biomeFeatures);
+        BiomeDefaultFeatures.addLushCavesVegetationFeatures(biomeFeatures);
         return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.JUNGLE, 0.5F, 0.7F, 4445678, 166357, spawnSettings, biomeFeatures, NORMAL_MUSIC);
     }
     public static Biome lushValley() {
@@ -118,9 +113,9 @@ public class ModOverworldBiomes {
 
         BiomeGenerationSettings.Builder biomeFeatures = new BiomeGenerationSettings.Builder();
         globalOverworldGeneration(biomeFeatures);
-        BiomeDefaultFeatures.addLushCavesVegetationFeatures(biomeFeatures);
         ModDefaultBiomeFeatures.addCalciteBoulders(biomeFeatures);
         BiomeDefaultFeatures.addTallBirchTrees(biomeFeatures);
+        BiomeDefaultFeatures.addLushCavesVegetationFeatures(biomeFeatures);
         return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.FOREST, 0.6F, 0.7F, 4445678, 166357, spawnSettings, biomeFeatures, NORMAL_MUSIC);
     }
 
@@ -147,8 +142,8 @@ public class ModOverworldBiomes {
 
         BiomeGenerationSettings.Builder biomeFeatures = new BiomeGenerationSettings.Builder();
         globalOverworldGeneration(biomeFeatures);
-        BiomeDefaultFeatures.addLushCavesVegetationFeatures(biomeFeatures);
         BiomeDefaultFeatures.addJungleTrees(biomeFeatures);
+        BiomeDefaultFeatures.addLushCavesVegetationFeatures(biomeFeatures);
         BiomeDefaultFeatures.addJungleMelons(biomeFeatures);
         return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.JUNGLE, 0.95F, 0.7F, 4445678, 166357, spawnSettings, biomeFeatures, NORMAL_MUSIC);
     }

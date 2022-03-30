@@ -25,7 +25,7 @@ public class ModBiomeProvider extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper)
     {
         if (ConfigManager.getConfig().lushValleyEnabled) {
-            this.addBiomeSimilar(mapper, Biomes.SAVANNA_PLATEAU, ModBiomeInit.LUSH_VALLEY);
+            this.addBiomeSimilar(mapper, Biomes.ERODED_BADLANDS, ModBiomeInit.LUSH_VALLEY);
             if (ConfigManager.getConfig().debugMessages) {
                 LushForest.LOGGER.debug("Lush Valleys are enabled.");
             }
